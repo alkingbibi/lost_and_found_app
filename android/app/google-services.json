@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "742530984804",
+    "project_id": "mafqoodatiapp2026",
+    "storage_bucket": "mafqoodatiapp2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742530984804:android:bd0ed502bf34e0bf5ca871",
+        "android_client_info": {
+          "package_name": "com.example.lost_and_found_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI9jgYvxew1LNdyBLoMUCVs0AZQaH_kok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742530984804:android:ddca22db5dc9734d5ca871",
+        "android_client_info": {
+          "package_name": "com.example.lost_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI9jgYvxew1LNdyBLoMUCVs0AZQaH_kok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
