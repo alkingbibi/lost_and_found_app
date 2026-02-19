@@ -2,22 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'features/auth/login_page.dart';
-import 'features/home/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  try {
+  // Initialize Firebase only if no apps exist yet
+  if (Firebase.apps.isEmpty) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-  } catch (e) {
-    // إذا حدث خطأ في Firebase
-    runApp(ErrorApp('Firebase init error:\n$e'));
-    return;
   }
 
-  // Catch Flutter errors globally
+  // Catch Flutter runtime errors globally
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     runApp(ErrorApp(details.exceptionAsString()));
@@ -26,7 +22,6 @@ void main() async {
   runApp(const LostAndFoundApp());
 }
 
-// التطبيق الرئيسي
 class LostAndFoundApp extends StatelessWidget {
   const LostAndFoundApp({super.key});
 
@@ -38,12 +33,12 @@ class LostAndFoundApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: LoginPage(), // يبدأ بالـ LoginPage
+      home: LoginPage(), // بدون const
     );
   }
 }
 
-// شاشة عرض الأخطاء
+// Error screen to show runtime errors
 class ErrorApp extends StatelessWidget {
   final String errorMessage;
   const ErrorApp(this.errorMessage, {super.key});
