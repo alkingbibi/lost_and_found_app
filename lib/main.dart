@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'features/auth/login_page.dart';
 
 void main() {
-  // التقاط أي خطأ أثناء تشغيل التطبيق
+  // Catch Flutter runtime errors globally
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     runApp(ErrorApp(details.exceptionAsString()));
@@ -22,12 +22,12 @@ class LostAndFoundApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const LoginPage(),
+      home: const LoginPage(), // الصفحة الرئيسية
     );
   }
 }
 
-// شاشة عرض الخطأ
+// شاشة عرض الأخطاء
 class ErrorApp extends StatelessWidget {
   final String errorMessage;
   const ErrorApp(this.errorMessage, {super.key});
