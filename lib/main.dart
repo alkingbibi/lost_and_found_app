@@ -38,7 +38,7 @@ class LostAndFoundApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const LoginPage(), // يبدأ بالـ LoginPage
+      home: LoginPage(), // يبدأ بالـ LoginPage
     );
   }
 }
